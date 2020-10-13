@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h1>Device Health</h1>
+    <hr>
+</div>
+
+<div class="container">
+    <h1>Network stats:</h1>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Interface</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for l in networks %}
+            <tr>
+                <td>{{ l.interface }}</td>
+                <td>{{ l.usage }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <hr>
+    <h1>Disk Space</h1>
+    <hr>
+    <p>{{ disk }}</p>
+</div>
+{% endblock %}
